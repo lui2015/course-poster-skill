@@ -35,11 +35,24 @@
 与正面同风格渐变条，标题改为「N 句核心思想」，副标题为课程全名。
 底部加装饰线：
 ```css
+.header {
+  text-align: center;          /* 标题整体居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* 子元素水平居中 */
+}
+.header-title {
+  text-align: center;           /* 主标题居中 */
+}
+.header-sub {
+  text-align: center;           /* 副标题（课程名）居中 */
+}
 .header-line {
   width: 40mm; height: 1px; margin: 1mm auto 0;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
 }
 ```
+**关键规则**：主标题和副标题必须居中对齐。
 
 ### 金句卡片
 双列网格布局：

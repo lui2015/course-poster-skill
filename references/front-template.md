@@ -77,6 +77,26 @@ background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
 ```
 内含低透明度SVG纹理（圆点/十字/菱形），z-index分层。
 
+### Header 标题布局
+```css
+.header {
+  text-align: center;          /* 标题整体居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* 子元素水平居中 */
+}
+.header-title {
+  text-align: center;           /* 主标题居中 */
+}
+.header-sub {
+  text-align: center;           /* 副标题居中 */
+  display: inline-flex;
+  align-items: center;
+  gap: 2mm;
+}
+```
+**关键规则**：主标题和副标题必须居中对齐，侧标签（知识图谱）绝对定位在右侧。
+
 ### Bottom Section
 深色底栏：
 ```css
