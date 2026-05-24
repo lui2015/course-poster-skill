@@ -2,7 +2,7 @@
 name: course-poster
 description: >
   课程知识海报生成器。根据任意课程名称，自动生成正反两面A4知识海报（正面：知识图谱/概念地图；背面：核心思想金句）。
-  支持用户选择页面风格和主题配色。触发场景：用户要求为课程/书籍/培训内容制作知识海报、
+  支持用户选择主题（风格+配色一体化）。触发场景：用户要求为课程/书籍/培训内容制作知识海报、
   概念图谱、金句海报、A4打印海报、正反面海报等。关键词：课程海报、知识图谱、
   核心思想、金句、A4海报、正反面、打印、课程总结、读书海报。
 ---
@@ -18,10 +18,24 @@ description: >
 向用户确认以下内容（缺失时主动追问）：
 
 - **课程名称**（必需）：如"刘润5分钟商学院"、"得到·薛兆丰经济学讲义"
-- **风格选择**：从 [references/style-presets.md](references/style-presets.md) 选择，或自定义
-- **主题配色**：从预设色板选择，或用户自定义主色/辅色
+- **主题选择**：从 [references/style-presets.md](references/style-presets.md) 的12个主题中选择，或自定义
 
-若用户未指定风格/配色，展示选项让用户选择。
+若用户未指定主题，展示选项让用户选择（单选，一次搞定风格+配色）。
+
+**展示格式示例**：
+> 请选择海报主题：
+> 1. 🎓 学术经典 — 暖白底+蓝青配色（经管/人文/社科）
+> 2. 🌊 海洋学府 — 暖白底+深蓝配色（金融/经济/商业）
+> 3. 🌅 琥珀书斋 — 暖白底+红金配色（历史/哲学/文学）
+> 4. 💻 赛博霓虹 — 深蓝黑底+霓虹配色（编程/AI/科技）
+> 5. 🕶️ 赛博矩阵 — 深蓝黑底+冷色配色（数据/工程/架构）
+> 6. 🌌 星空幻境 — 深靛蓝底+紫蓝配色（设计/创意/未来）
+> 7. ⬜ 极简墨白 — 纯白底+蓝青配色（设计/艺术/思维）
+> 8. 🔲 极简工坊 — 浅灰底+灰橙配色（产品/运营/创业）
+> 9. 🌿 自然森林 — 米白底+绿棕配色（健康/心理/教育）
+> 10. 🍵 焦糖暖阳 — 暖米底+焦糖配色（生活/美学/亲子）
+> 11. 💎 暗金玫瑰 — 深炭底+玫瑰金配色（金融/商业/高端）
+> 12. 🔥 赤焰商道 — 深炭底+赤金配色（创业/战略/领导力）
 
 ### 2. 内容规划
 
@@ -48,7 +62,7 @@ description: >
 规范详见：
 - 正面：[references/front-template.md](references/front-template.md)
 - 背面：[references/back-template.md](references/back-template.md)
-- 配色：[references/style-presets.md](references/style-presets.md)
+- 主题：[references/style-presets.md](references/style-presets.md)
 
 ### 4. 截图生成PNG
 
@@ -83,3 +97,4 @@ node scripts/screenshot.js <html-path> <output-png-path>
 - Google Fonts 引入 `Noto Sans SC` + `Noto Serif SC`
 - 打印适配：`-webkit-print-color-adjust: exact`
 - 所有模块色条、标签色需与主题配色一致
+- 暗色主题（赛博系列/暗金系列）配色需提亮15-20%确保暗底可读
